@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Appointment Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .status {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .status p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .status strong {
+            color: #007BFF;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        footer img {
+            width: 25px;
+            height: 25px;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Clinic Appointment Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <div class="status">
+            <p><strong>Total Appointments Booked:</strong> {{ total_appointments }}</p>
+            <p><strong>Completed Appointments:</strong> {{ completed_appointments }}</p>
+        </div>
+        <div class="status">
+            <p><strong>Pending Appointments:</strong> {{ pending_appointments }}</p>
+            <p><strong>Doctor Availability:</strong> {{ doctor_status }}</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made by <strong>Pragyan</strong></p>
+        <a href="https://github.com/pragyanpandex/clinicmanagementsystem" target="_blank">
+            <span>View on GitHub</span>
+            <img src="https://github.com/favicon.ico" alt="GitHub logo">
+        </a>
+    </footer>
+</body>
+</html>
