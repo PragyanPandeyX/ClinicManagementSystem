@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinic Appointment Dashboard</title>
+    <title>Clinic Appointment Table</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f7f6;
+            background-color: #f9f2f2;
             color: #333;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #007BFF;
+            background-color: #d9534f; /* Reddish color */
             color: white;
             padding: 20px;
             text-align: center;
+            border-bottom: 4px solid #c9302c; /* Darker reddish border */
         }
 
         header h1 {
@@ -34,23 +35,39 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .status {
-            display: flex;
-            justify-content: space-between;
-            margin: 15px 0;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
             padding: 10px;
-            background-color: #e9ecef;
-            border-radius: 8px;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid #e6a8a1; /* Light reddish border */
         }
 
-        .status p {
-            margin: 0;
-            font-size: 1.2em;
+        th {
+            background-color: #c9302c; /* Darker reddish color */
+            color: white;
         }
 
-        .status strong {
-            color: #007BFF;
+        tr:nth-child(even) {
+            background-color: #f8d7d7; /* Light red background for even rows */
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f2cccc; /* Slightly darker red for odd rows */
+        }
+
+        .status {
+            color: #28a745; /* Green for completed */
+            font-weight: bold;
+        }
+
+        .rescheduled {
+            color: #ffc107; /* Yellow for rescheduled */
+            font-weight: bold;
         }
 
         footer {
@@ -62,7 +79,7 @@
 
         footer a {
             text-decoration: none;
-            color: #007BFF;
+            color: #d9534f; /* Reddish color for the link */
             font-weight: bold;
         }
 
@@ -72,28 +89,52 @@
             vertical-align: middle;
             margin-left: 8px;
         }
-
     </style>
 </head>
 <body>
     <header>
-        <h1>Clinic Appointment Dashboard</h1>
+        <h1>Clinic Appointment Table</h1>
     </header>
 
     <div class="container">
-        <div class="status">
-            <p><strong>Total Appointments Booked:</strong> {{ total_appointments }}</p>
-            <p><strong>Completed Appointments:</strong> {{ completed_appointments }}</p>
-        </div>
-        <div class="status">
-            <p><strong>Pending Appointments:</strong> {{ pending_appointments }}</p>
-            <p><strong>Doctor Availability:</strong> {{ doctor_status }}</p>
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                    <th>Phone Number</th>
+                    <th>Doctor Name</th>
+                    <th>Status</th>
+                    <th>Doctor Available</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pragyan Pandey</td>
+                    <td>24/11/24</td>
+                    <td>9:00 AM</td>
+                    <td>+919506412485</td>
+                    <td>Dr. Rajesh Kumar</td>
+                    <td class="status">Completed</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Arjun Singh</td>
+                    <td>24/11/24</td>
+                    <td>10:00 AM</td>
+                    <td>+919876543210</td>
+                    <td>Dr. Anil Sharma</td>
+                    <td class="rescheduled">Rescheduled</td>
+                    <td>Yes</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <footer>
-        <p>Made by <strong>Pragyan</strong></p>
-        <a href="https://github.com/pragyanpandex/clinicmanagementsystem" target="_blank">
+        <p>Made by <strong>Pragyan Pandey</strong></p>
+        <a href="https://github.com/pragyanpandeyx/clinicmanagementsystem" target="_blank">
             <span>View on GitHub</span>
             <img src="https://github.com/favicon.ico" alt="GitHub logo">
         </a>
